@@ -16,8 +16,12 @@ const init = async () => {
       const idx = fila.findIndex((elem) => elem.nome === request.query.nome);
 
       if (idx === -1) {
+        console.log(`${request.query.nome} não está na fila`);
+
         return `${request.query.nome} não está na fila`;
       }
+
+      console.log(`${idx + 1}º ${fila[idx].status}`);
 
       return `${idx + 1}º ${fila[idx].status}`;
     }
